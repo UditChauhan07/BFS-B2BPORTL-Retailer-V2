@@ -1,0 +1,833 @@
+.scrollP {
+  border: 1px solid #e4e4e4;
+  padding: 10px 20px;
+  height: 590px;
+  overflow: auto;
+}
+.Mainbox4:hover{
+  cursor: pointer;
+}
+.MyBagFinalMain {
+  border: 1px dashed #000;
+  background: #fff;
+  padding: 38px 30px 30px 10px;
+  margin: 10px 0 0 0;
+}
+.ClearBag{
+  background-color: #f1f0f0;
+}
+.MainInner {
+  background: #fff;
+  padding: 17px 27px;
+  min-height: 400px;
+  overflow: auto;
+}
+
+.MainInner::-webkit-scrollbar {
+  border-radius: 50px;
+  background-color: #d9d9d9;
+  width: 4px;
+  margin: 0 10px 0 0;
+  padding: 0 10px 0 0;
+}
+
+.MainInner::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+  width: 4px;
+}
+
+.MyBagFinalTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MyBagFinalRight,
+.MyBagFinalleft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.MyBagFinalRight h4 {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.MyBagFinalRight h4 span {
+  font-size: 22px;
+  letter-spacing: 2.2px;
+}
+
+.MyBagFinalleft h5 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.MyBagFinalleft h5 b {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.Mainbox {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9e9e9;
+  margin: 0 0 26px 0;
+  padding: 0 0 20px 0;
+  align-items: center;
+}
+
+.MainBag h3 {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 177.778% */
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.Mainbox1M {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.Mainbox1M img {
+  width: 100%;
+  max-width: 100px;
+}
+.Mainbox3{
+  width: fit-content;
+}
+.Mainbox3 h2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 228.571% */
+  letter-spacing: 1.12px;
+  margin: 0;
+}
+
+.Mainbox1M p {
+  margin: 0 0 0 0;
+  display: flex;
+  gap: 10px;
+}
+
+.Span11 {
+  color: #9c9c9c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 10px; /* 266.667% */
+  letter-spacing: 1.12px;
+}
+
+.Span1 {
+  color: #9c9c9c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 266.667% */
+  letter-spacing: 1.12px;
+  text-decoration: line-through;
+}
+
+.Span2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 228.571% */
+  letter-spacing: 1.12px;
+}
+
+.Mainbox2M {
+  display: flex;
+  align-items: center;
+  /* gap: 20px; */
+}
+
+.Mainbox input {
+  width: 42px;
+  height: 26px;
+  text-align: center;
+  /* padding: 0; */
+  line-height: 5;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+}
+
+.Mainbox button {
+  height: 26px;
+  border: 0.5px solid #000;
+  background: #f8fafb;
+  width: 22px;
+  color: #000;
+  font-size: 16px;
+  /* text-align: ce; */
+  font-weight: 400;
+  /* padding: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TotalPricer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 0 5px;
+}
+
+.TotalPricer h2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 177.778% */
+  letter-spacing: 1.12px;
+}
+.Mainbox5 {
+  margin: 0 0 0 20px;
+}
+
+.Mainbox2 img {
+  width: 100%;
+}
+
+.ShipAdress {
+  border: 1px solid #e4e4e4;
+  background: #fff;
+  padding: 15px;
+}
+
+.ShipAdress p {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px; /* 178.571% */
+  letter-spacing: 1.12px;
+  border-bottom: 1px dashed #000;
+  padding: 0 0 8px 0;
+}
+
+.ShipAdress2 {
+  background-color: #f8f8f8;
+  padding: 20px 0 0px 20px;
+  margin: 32px 0;
+}
+
+.ShippControl h2 {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 177.778% */
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.ShipAdress2 h4 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 177.778% */
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.ShipAdress2 textarea::placeholder,
+.ShipAdress2 textarea {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 228.571% */
+  letter-spacing: 1.12px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* text-transform: uppercase; */
+}
+
+
+.ShipAdress2 label{
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 228.571% */
+  letter-spacing: 1.12px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* text-transform: uppercase; */
+}
+
+
+.ShipBut {
+  width: 100%;
+}
+
+.ShipBut button {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 213.333% */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: #000;
+  margin: 0 0 28px 0;
+}
+
+.ClearBag{
+  background-color: #f1f0f0;
+  width: 100%;
+  color:black;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 213.333% */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+ margin: 0 0 28px 0;
+}
+@media (max-width: 1199px) {
+  .MainInner {
+    padding: 17px 5px;
+  }
+  .scrollP {
+    padding: 10px 5px;
+  }
+
+  .Mainbox1M {
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  
+  .MyBagFinalRight h4 span{
+  }
+
+  .MyBagFinalRight h4{
+    display: block;
+  }
+
+.MyBagFinalTop {
+  display: block;
+  justify-content: space-between;
+}
+
+.MyBagFinalleft{
+      margin: 23px 0 0 0;
+}
+
+}
+
+@media (max-width: 767.98px) {
+.Mainbox{
+  display: block;
+}
+.Mainbox2M{
+  margin: 20px 0 0px 0;
+}
+}
+
+
+
+
+
+/* ....Modal Css Start */
+.CredBut {
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 32px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 28px 0;
+  background-color: rgb(255, 255, 255) !important;
+  border: 2px solid black !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+
+.bothbutton {
+  display: flex !important;
+  float: right;
+  padding-bottom: 10px !important;
+}
+
+.CancleBtn {
+  padding: 5px 30px !important;
+  border: 1px solid rgba(0, 0, 0, 1);
+  font-weight: 600;
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submitBtn {
+  padding: 5px 30px !important;
+  border: 1px solid black;
+  margin-right: 15px;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Credittitles {
+  font-size: 22px !important;
+  color: rgba(0, 0, 0, 1) !important;
+  font-family: "Montserrat" !important;
+  margin: auto;
+  padding: 20px;
+  font-weight: 500;
+  /* color: red !important; */
+}
+
+.Credittitles span {
+  color: rgba(107, 107, 107, 1) !important;
+}
+
+.mainRadioDiv {
+  border: 1px solid #80808038;
+  border-radius: 10px;
+  background-color: #d7e0df3d;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 15px;
+  margin-bottom: 70px !important;
+}
+
+
+.inputA {
+  width: 50%;
+  margin-top: 10px;
+  /* border: 1px solid red; */
+}
+
+
+
+.inputRadio {
+  border: 1px solid #80808038;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  background-color: rgb(255, 255, 255) !important;
+
+}
+
+.inputDiv {
+  /* border: 2px  solid green ; */
+  /* width: 30%; */
+}
+
+.inputRadio2 {
+  margin-top: 15px;
+  border: 1px solid #80808038;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.inputRadio3 {
+  margin-top: -15px;
+  border: 1px solid #80808038;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+/* .customWidth{
+  width: 50%;
+} */
+
+
+
+.inputRadio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 6px solid black;
+  outline: none;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* Define custom style for radio button when checked */
+.inputRadio input[type="radio"]:checked::before {
+  margin: 2px;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* border: 6px solid black; */
+}
+
+/* Border style for disabled radio button */
+.inputRadio input[type="radio"]:disabled {
+  border: 1px solid rgba(213, 217, 217, 1);
+}
+
+
+.inputRadio label {
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 14px !important;
+  font-weight: 600;
+  margin: auto;
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+.creditPrice {
+  margin-top: -20px;
+  margin-left: 35px;
+
+}
+
+
+.inputRadio2 input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 6px solid black;
+  outline: none;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* Define custom style for radio button when checked */
+.inputRadio2 input[type="radio"]:checked::before {
+  margin: 2px;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* border: 6px solid black; */
+}
+
+/* Border style for disabled radio button */
+.inputRadio2 input[type="radio"]:disabled {
+  border: 1px solid rgba(213, 217, 217, 1);
+}
+
+
+.inputRadio2 label {
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 14px !important;
+  font-weight: 700;
+  margin: auto;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.inputRadio3 input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 6px solid black;
+  outline: none;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* Define custom style for radio button when checked */
+.inputRadio3 input[type="radio"]:checked::before {
+  margin: 2px;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* border: 6px solid black; */
+}
+
+/* Border style for disabled radio button */
+.inputRadio3 input[type="radio"]:disabled {
+  border: 1px solid rgba(213, 217, 217, 1);
+}
+
+
+.inputRadio3 label {
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 14px !important;
+  font-weight: 700;
+  margin: auto;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.editablePrice {
+  display: flex;
+  width: 50%;
+  float: right;
+  text-align: end;
+  justify-content: end;
+  gap: 5px;
+}
+
+.editIcon {
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.checkDev {
+  margin-top: 22px;
+  width: 100%;
+  margin-left: -295px;
+}
+
+.checkDev p {
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+
+.checkBox {
+  margin-top: 25px;
+  position: relative;
+  cursor: pointer;
+  /* outline: none; */
+}
+
+input[type="checkbox"] {
+  accent-color: rgba(88, 168, 18, 1) !important;
+}
+
+
+.price {
+  margin-top: -37px;
+  font-weight: bold;
+  width: 100%;
+  /* outline: none; */
+  color: rgba(88, 168, 18, 1);
+  text-align: end;
+}
+
+.editablePrice input:focus {
+  outline: 1px solid rgba(236, 236, 236, 1);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 50px !important;
+
+}
+
+.editablePrice .checkBox:focus {
+  width: 15px !important;
+  height: 15px !important;
+
+}
+
+.price2 {
+  margin-top: -37px;
+  float: right;
+  color: rgba(138, 138, 138, 1);
+  text-align: right;
+}
+
+.price3 {
+  margin-top: -37px;
+  float: right;
+  color: rgba(138, 138, 138, 1);
+  text-align: right;
+}
+
+.dateDetails {
+  font-size: 12px !important;
+  float: right;
+  color: rgb(167, 167, 167);
+  font-weight: 100;
+
+}
+
+/* ....Modal Css End */
+
+
+@media (max-width: 1199px) {
+  .MainInner {
+    padding: 17px 5px;
+  }
+
+  .scrollP {
+    padding: 10px 5px;
+  }
+
+  .Mainbox1M {
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+
+  .MyBagFinalRight h4 span {}
+
+  .MyBagFinalRight h4 {
+    display: block;
+  }
+
+  .MyBagFinalTop {
+    display: block;
+    justify-content: space-between;
+  }
+
+  .MyBagFinalleft {
+    margin: 23px 0 0 0;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .Mainbox {
+    display: block;
+  }
+
+  .Mainbox2M {
+    margin: 20px 0 0px 0;
+  }
+}
+
+.validationError {
+  color: red;
+  font-weight: bold;
+  font-size: x-small;
+}
+
+.orderBtn {
+  margin: 20px 0px;
+}
+
+
+.PreviousPricer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 0 5px;
+}
+
+.TotalPricer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 0 5px;
+}
+.PreviousPricer h2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  /* 177.778% */
+  letter-spacing: 1.12px;
+}
+.DiscountPricer{
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 0 5px;
+ 
+}
+.DiscountPricer p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  /* 177.778% */
+  letter-spacing: 1.12px;
+}
+.DiscountPricer .disprice{
+  color: rgba(88, 168, 18, 1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  /* 177.778% */
+  letter-spacing: 1.12px;
+}
+
+.TotalPricer h2 {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  /* 177.778% */
+  letter-spacing: 1.12px;
+}
+
+.editPrice{
+  display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+.editPrice img{
+  height: 15px;
+}
