@@ -13,7 +13,7 @@ function OrderListContent({ data,hideDetailedShow=false }) {
   const [productDetailId, setProductDetailId] = useState(null)
   const [accountId, setAccountId] = useState();
   const [manufacturerId, setManufacturerId] = useState();
-  const currentDate = new Date();
+  // const currentDate = new Date();
   const months = [
     "January",
     "February",
