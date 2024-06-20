@@ -197,8 +197,8 @@ function OrderListContent({ data,hideDetailedShow=false }) {
                   <div className={Styles.totalProductPrice}>
                     <div className={Styles.Margitotal}>
                       <h3>Total</h3>
-                      {/* <p>${Number(item.Amount).toFixed(2) - Number(item.Credit_Allocation_Amount__c ? item.Credit_Allocation_Amount__c : 0).toFixed(2)}</p> */}
-                      <p>${Number((item.Amount) - (item.Credit_Allocation_Amount__c ? item.Credit_Allocation_Amount__c : 0)).toFixed(2)}</p>
+                      <p>${Number(item.Amount).toFixed(2)}</p>
+                      {/* <p>${Number((item.Amount) - (item.Credit_Allocation_Amount__c ? item.Credit_Allocation_Amount__c : 0)).toFixed(2)}</p> */}
                     </div>
                     <div className={Styles.TicketWidth} style={hideDetailedShow?{display:'none'}:null}>
                       {/* <button className="me-4">View Ticket</button> */}
