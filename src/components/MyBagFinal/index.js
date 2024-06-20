@@ -24,6 +24,7 @@ function MyBagFinal() {
   const [isPOEditable, setIsPOEditable] = useState(false);
   const [PONumberFilled, setPONumberFilled] = useState(true);
   const [clearConfim,setClearConfim] = useState(false)
+
   const [ productDetailId, setProductDetailId] = useState(null)
   // console.log({aa:Object.values(bagValue?.orderList)?.length});
   const [limitInput, setLimitInput] = useState("");
@@ -39,10 +40,11 @@ function MyBagFinal() {
   const [validationMessage, setValidationMessage] = useState('')
 
   const inputRef = useRef(null)
+  const amount = localStorage.getItem('creditAmount') ?? '0'
 
   const handleEditClick = () => {
     setValidationMessage('')
-    setIsEditable(!isEditable)
+    setIsEditable(true)
     setIsCheckboxChecked(false)
     localStorage.setItem('creditAmount', '')
     setPriceValue('')
@@ -50,49 +52,79 @@ function MyBagFinal() {
     inputRef.current.focus()
   }
 
-  const extractWordAfterCharacter = (input, character) => {
-    const regex = new RegExp(`\\${character}(\\w+)`)
-    const match = input.match(regex)
-    // console.log({match:match[1]})
-    return match ? match[1] : ''
+  // const extractWordAfterCharacter = (input, character) => {
+  //   const regex = new RegExp(`\\${character}(\\w+)`)
+  //   const match = input.match(regex)
+  //   return match ? match[1] : ''
+  // }
+
+  // const handlePriceChange = (e) => {
+  //   const val = e.target.value
+  //   const character = '$'
+  //   const value = Number(extractWordAfterCharacter(val, character))
+  //   if (value === '' || (parseFloat(value) >= 0 && value <= creditNote?.amount?.available && value <= subTotal)) {
+  //     setPriceValue(value)
+  //     localStorage.setItem('creditAmount', value)
+  //     setFullPriceValue('$' + value)
+  //     setValidationMessage('')
+
+  //     console.log({lll : localStorage.getItem('creditAmount')})
+  //   } else {
+  //     setValidationMessage('Enter Valid Amount for Credit Allocation')
+
+  //     setTimeout(() => {
+  //       setValidationMessage('')
+  //     }, 5000)
+  //   }
+  // }
+
+  
+//...New...Function...Write...By... Ankush...Start//
+
+const extractWordAfterCharacter = (input, character) => {
+  const regex = new RegExp(`\\${character}(\\d+\\.?\\d*)`);
+  const match = input.match(regex);
+  return match ? match[1] : '';
+}
+const handlePriceChange = (e) => {
+  const val = e.target.value;
+  const character = '$';
+  const value = extractWordAfterCharacter(val, character);
+
+  console.log({ val, character, value });
+
+  if (value === '' || (parseFloat(value) >= 0 && parseFloat(value) <= creditNote?.amount?.available && parseFloat(value) <= subTotal)) {
+    setPriceValue(value);
+    localStorage.setItem('creditAmount', value);
+    setFullPriceValue('$' + value);
+    setValidationMessage('');
+
+    console.log({ lll: localStorage.getItem('creditAmount') });
+  } else {
+    setValidationMessage('Enter Valid Amount for Credit Allocation');
+
+    setTimeout(() => {
+      setValidationMessage('');
+    }, 5000);
   }
+}
 
-  const handlePriceChange = (e) => {
-    const val = e.target.value
-    const character = '$'
-    const value = Number(extractWordAfterCharacter(val, character))
-    // console.log({subTotal, value, available:creditNote.available})
-    
-    if (value === '' || (parseFloat(value) >= 0 && value <= creditNote.available && value <= subTotal)) {
-      setPriceValue(value)
-      localStorage.setItem('creditAmount', value)
-      setFullPriceValue('$' + value)
-      setValidationMessage('')
-
-      console.log({lll : localStorage.getItem('creditAmount')})
-    } else {
-      setValidationMessage('Enter Valid Amount for Credit Allocation')
-
-      setTimeout(() => {
-        setValidationMessage('')
-      }, 5000)
-    }
-  }
+//...New...Function...Write...By... Ankush...End//
 
   const handleCheckboxChange = (e) => {
     // setIsEditable(e.target.checked)
     setIsCheckboxChecked(e.target.checked)
     if (e.target.checked) {
-      console.log({cond: (creditNote.available <= subTotal),ava : creditNote.available, subTotal })
-      if(creditNote.available <= subTotal)
+      console.log({cond: (creditNote?.amount?.available <= subTotal),ava : creditNote?.amount?.available, subTotal })
+      if(creditNote?.amount?.available <= subTotal)
       {
-        setPriceValue(creditNote.available)
-        localStorage.setItem('creditAmount', creditNote.available)
-        setFullPriceValue('$' + creditNote.available)
+        setPriceValue(creditNote?.amount?.available)
+        localStorage.setItem('creditAmount', creditNote?.amount?.available)
+        setFullPriceValue('$' + creditNote?.amount?.available)
         setValidationMessage('')
       }
       else{
-        setValidationMessage(`You can't set the value above the Sub Total Value - $${creditNote.available}.`)
+        setValidationMessage(`You can't set the value above the Sub Total Value - $${creditNote?.amount?.available}.`)
 
         setTimeout(() => {
           setValidationMessage('')
@@ -463,7 +495,7 @@ function MyBagFinal() {
                         <>
                           <div className={Styles.PreviousPricer}>
                             <div>
-                            <h2>Previous Total</h2>
+                            <h2>Total</h2>
                             </div>
                             <div>
                               <h2>${Number(total).toFixed(2)}</h2>
@@ -471,6 +503,7 @@ function MyBagFinal() {
                           </div>
                           <div className={Styles.DiscountPricer}>
                             <div>
+                              
                             <p>Credit Note Discount</p>
                             </div>
                             <div className={Styles.editPrice}>
@@ -548,7 +581,21 @@ function MyBagFinal() {
                     {priceValue || localStorage.getItem('creditAmount') > 0 ?
                         ''
                         :
-                        <button className={Styles.CredBut} onClick={handleShowModal}>Apply credit Note</button>
+                        
+                        <button className={Styles.CredBut}
+                        onClick={() => {
+
+                          if (Object.keys(orders).length) {
+                            if (PONumber.length) {
+                          handleShowModal()
+
+                            } else {
+                              setPONumberFilled(false);
+                            }
+                          }
+                        }}
+                        disabled={!buttonActive}
+                        >Apply credit Note</button>
                       }
 
                       {/* /// credit Modal.....Start */}
@@ -566,7 +613,7 @@ function MyBagFinal() {
                                 <input type="radio" id="input1" name="creditNote" defaultChecked />
                                 <label htmlFor="input1">Available Credit</label>
                                 <div className={Styles.creditPrice}>
-                                  <b>$ {creditNote.available} </b>
+                                  <b>$ {creditNote?.amount?.available} </b>
                                 </div>
                               </div>
                               <div className={Styles.editablePrice}>
@@ -574,7 +621,7 @@ function MyBagFinal() {
                                   <input
                                     type="text"
                                     className={Styles.price}
-                                    value={`$` + localStorage.getItem('creditAmount') }
+                                    value={`$` + amount }
                                     onChange={handlePriceChange}
                                     readOnly={!isEditable}
                                     ref={inputRef}

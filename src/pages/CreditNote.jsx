@@ -197,7 +197,7 @@ const CreditNote = () => {
                 <div className="row p-0 m-0 d-flex flex-column justify-content-around align-items-center col-12">
                     <div className={Style.backTransaction}>
                         <div>
-                            <img src='assets/images/Vector.png' alt='ww' />
+                            {/* <img src='assets/images/Vector.png' alt='ww' /> */}
                         </div>
                         <div><h1>Transactions</h1></div>
                     </div>
@@ -276,7 +276,7 @@ const CreditNote = () => {
                                         <div className={Style.productdata} key={item.id}>
                                             <div className={Style.productDataDeatils}>
                                                 <div className={item?.ManufacturerLogo ? Style.ProductImg : Style.DefaultProductImg}>
-                                                    <img src={item?.ManufacturerLogo ?? img} alt='img' />
+                                                    {/* <img src={item?.ManufacturerLogo ?? img} alt='img' /> */}
                                                 </div>
                                                 <div className={Style.productTitle}>
                                                     <h3>
