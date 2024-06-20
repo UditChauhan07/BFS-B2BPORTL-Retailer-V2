@@ -876,7 +876,7 @@ export async function getCreditNotes(key, retailer, manufacturer) {
     DestoryAuth()
   } else {
     console.log({dataResult : data?.result})
-    return data?.result
+    return data
   }
 }
 
