@@ -276,9 +276,9 @@ const CreditNote = () => {
                                     filteredData.map((item) => (
                                         <div className={Style.productdata} key={item.id}>
                                             <div className={Style.productDataDeatils}>
-                                                <div className={item?.ManufacturerLogo ? Style.ProductImg : Style.DefaultProductImg}>
-                                                    {/* <img src={item?.ManufacturerLogo ?? img} alt='img' /> */}
-                                                </div>
+                                                {/* <div className={item?.ManufacturerLogo ? Style.ProductImg : Style.DefaultProductImg}>
+                                                    <img src={item?.ManufacturerLogo ?? img} alt='img' />
+                                                </div> */}
                                                 <div className={Style.productTitle}>
                                                     <h3>
                                                         {item.Manufacturer} | <span>{item?.opportunity?.Account?.Name}</span>
