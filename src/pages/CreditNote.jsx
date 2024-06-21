@@ -113,7 +113,7 @@ const CreditNote = () => {
                         return false;
                     });
                 }) 
-                : true
+                : true    
 
             return manufacturerMatch && statusMatch && createdDateMatch && keywordMatch;
         })
