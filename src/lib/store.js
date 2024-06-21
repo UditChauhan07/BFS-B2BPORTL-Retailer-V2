@@ -2,8 +2,8 @@
 // export const originAPi = "https://dev.beautyfashionsales.com"
 // export const originAPi = "http://localhost:3001"
 
-export const originAPi = "https://www.uditchauhan.com"
-// export const originAPi = "http://localhost:8010"
+// export const originAPi = "https://www.uditchauhan.com"
+export const originAPi = "http://localhost:8010"
 
 let url = `${originAPi}/retailer/`
 const orderKey = "orders"
