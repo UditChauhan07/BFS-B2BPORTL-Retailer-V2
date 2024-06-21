@@ -127,7 +127,8 @@ const CreditNote = () => {
         else {
             sortedData.sort((a, b) => b.Manufacturer.localeCompare(a.Manufacturer))
         }
-
+        
+        sortedData.sort((a, b) => new Date(b.CreatedDate) - new Date(a.CreatedDate))
         return sortedData
     }, [ data, manufacturerFilter, recordStatusFilter, createdDateFilter, searchFilter, sortOrder ])
 
