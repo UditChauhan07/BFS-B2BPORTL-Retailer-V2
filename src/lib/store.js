@@ -1,7 +1,3 @@
-// export const originAPi = "https://b2b.beautyfashionsales.com"
-// export const originAPi = "https://dev.beautyfashionsales.com"
-// export const originAPi = "http://localhost:3001"
-
 export const originAPi = "https://www.uditchauhan.com"
 // export const originAPi = "http://localhost:8010"
 
@@ -14,7 +10,6 @@ const accountKey = "manufacturer"
 const POCount = "woX5MkCSIOlHXkT"
 const support = "AP0HBuNwbNnuhKR"
 const shareKey = "3a16FWFtoPA5FMC"
-// export const originAPi = "https://dev.beautyfashionsales.com"
 
 export const months = [
   "January",
