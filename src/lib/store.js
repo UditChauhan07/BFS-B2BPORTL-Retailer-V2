@@ -2,8 +2,8 @@
 // export const originAPi = "https://dev.beautyfashionsales.com"
 // export const originAPi = "http://localhost:3001"
 
-export const originAPi = "https://www.uditchauhan.com"
-// export const originAPi = "http://localhost:8010"
+// export const originAPi = "https://www.uditchauhan.com"
+export const originAPi = "http://localhost:8010"
 
 let url = `${originAPi}/retailer/`
 const orderKey = "orders"
@@ -353,30 +353,29 @@ export async function getRetailerBrands({ rawData }) {
   if (data.status == 300) {
     DestoryAuth();
   } else {
-    return data.data;
+    return data.data
   }
 }
 
-export async function getRetailerBrandsNew(rawData) {
+export async function getRetailerBrandsList(rawData) {
   let headersList = {
     Accept: "*/*",
     "Content-Type": "application/json",
-  };
-  let response = await fetch(originAPi + "/retailer/GQGpen0kmGHGPtx", {
+    key : rawData.token
+  }
+  let response = await fetch(originAPi + "/retailer/v3/JbUxci", {
     method: "POST",
     body: JSON.stringify(rawData),
     headers: headersList,
   })
-
-  console.log({response})
   
   let res = await response.text()
   let data = JSON.parse(res)
   
   if (data.status == 300) {
-    DestoryAuth();
+    DestoryAuth()
   } else {
-    return data?.data;
+    return data?.data?.records
   }
 }
 
