@@ -309,7 +309,7 @@ function MyBagFinal({ setOrderDetail }) {
                         className="placeholder:font-[Arial-500] text-[14px] tracking-[1.12px] m-0"
                         style={{ minHeight: "119px" }}
                       >
-                        {OrderData.Description}
+                        {OrderData.Description.split('--------------Credit Note---------------')[0]}
                       </p>
                     </div>
                   </div>
