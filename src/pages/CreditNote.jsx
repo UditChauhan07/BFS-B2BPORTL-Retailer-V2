@@ -3,7 +3,7 @@ import Style from "../pages/CreditNote.module.css";
 import Loading from "../components/Loading";
 import AppLayout from '../components/AppLayout';
 import { FilterItem } from '../components/FilterItem';
-import { GetAuthData, getRetailerBrandsNew, getCreditNotesList } from "../lib/store"
+import { GetAuthData, getRetailerBrandsList, getCreditNotesList } from "../lib/store"
 import ModalPage from '../components/Modal UI'
 
 const CreditNote = () => {
@@ -54,10 +54,10 @@ const CreditNote = () => {
 
             const raw = {
                 accountId : user?.data?.accountId, 
-                key : user?.data?.x_access_token
+                token : user?.data?.x_access_token
             }
 
-            getRetailerBrandsNew(raw).then( async (data) => {
+            getRetailerBrandsList(raw).then( async (data) => {
                 const result = await data
                 console.log({result})
                 setBrand(result)
@@ -122,7 +122,7 @@ const CreditNote = () => {
             sortedData.sort((a, b) => a.Manufacturer?.localeCompare(b.Manufacturer))
         } 
         // else if (sortOrder === 'Z-A') {
-        //     sortedData.sort((a, b) => b.Manufacturer.localeCompare(a.Manufacturer))
+        //     sortedData.sort((a, b) => b.Manufacturer?.localeCompare(a.Manufacturer))
         // }
         else {
             sortedData.sort((a, b) => b.Manufacturer?.localeCompare(a.Manufacturer))
@@ -183,8 +183,8 @@ const CreditNote = () => {
                         options={
                             brand && brand.length > 0
                                 ? brand.map((manufacturer) => ({
-                                    label: manufacturer.Name,
-                                    value: manufacturer.Id,
+                                    label: manufacturer.ManufacturerName__c,
+                                    value: manufacturer.ManufacturerId__c,
                                 }))
                                 : []
                         }
