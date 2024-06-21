@@ -127,7 +127,7 @@ const CreditNote = () => {
         else {
             sortedData.sort((a, b) => b.Manufacturer.localeCompare(a.Manufacturer))
         }
-        
+
         sortedData.sort((a, b) => new Date(b.CreatedDate) - new Date(a.CreatedDate))
         return sortedData
     }, [ data, manufacturerFilter, recordStatusFilter, createdDateFilter, searchFilter, sortOrder ])
@@ -281,8 +281,7 @@ const CreditNote = () => {
                                                 </div>
                                                 <div className={Style.productTitle}>
                                                     <h3>
-                                                        {item.Manufacturer}
-                                                        {/* | <span>{item.productDescription}</span> */}
+                                                        {item.Manufacturer} | <span>{item?.opportunity?.Account?.Name}</span>
                                                     </h3>
                                                 </div>
                                             </div>
