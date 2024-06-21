@@ -4,6 +4,8 @@
     font-size: 29px;
     font-weight: 700;
     font-family: "Montserrat";
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .filterTransaction {
@@ -40,7 +42,8 @@
 }
 
 .titleAndFilter {
-
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     height: auto;
@@ -52,6 +55,7 @@
     font-family: "Montserrat";
     font-weight: 700;
     padding: 10px;
+    text-transform: uppercase;
 }
 
 .filterDropDown {
@@ -112,6 +116,7 @@
 }
 
 .FilterHead {
+    font-weight: 600;
     color: rgba(56, 56, 56, 1);
 }
 
@@ -146,14 +151,14 @@
     /* background-color: red; */
 }
 
-.ProductImg {
+/* .ProductImg {
     border: 1px solid rgba(164, 164, 164, 1);
-    width : 20%;
-}
+    width: 20%;
+} */
 
 .DefaultProductImg {
     border: 1px solid rgba(164, 164, 164, 1);
-    width : 5%;
+    width: 5%;
 }
 
 .productTitle {
@@ -195,12 +200,13 @@
     line-height: 0.6;
 }
 
-.plusPrice{
+.plusPrice {
     color: rgba(112, 210, 65, 1);
     font-size: 18px;
     font-weight: 700;
 }
-.minusPrice{
+
+.minusPrice {
     font-size: 18px;
     font-weight: 700;
     color: rgb(7, 7, 7);
@@ -216,6 +222,7 @@
     padding: 4px;
     font-family: "Montserrat";
 }
+
 .viewBtn button {
     background-color: black;
     color: white;
@@ -225,32 +232,37 @@
 
 
 /* //......Transaction Drop Down Start.. */
-.Calendardate{
-    width: 50%;
+.Calendardate {
+    /* width: 50%; */
 }
-.Calendardate input{
-    width: 90%;
+
+.Calendardate input {
+    width: 80%;
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin-left: 3px;
     outline: none;
 }
-.TransactionDiv{
-    width: 50%;
+
+.TransactionDiv {
+    /* width: 50%; */
     display: flex;
     align-items: center;
     gap: 5px;
 
 }
-.TransactionDropDown{
+
+.TransactionDropDown {
     font-family: 'Montserrat';
 }
-.TransactionDropDown p{
+
+.TransactionDropDown p {
     color: rgba(0, 0, 0, 1);
     font-weight: 600;
-    margin-bottom:0px;
+    margin-bottom: 0px;
 }
-.dropdownOptions2{
+
+.dropdownOptions2 {
     position: absolute;
     right: 0%;
     /* top: 0%; */
@@ -265,16 +277,18 @@
     z-index: 1;
     letter-spacing: 1.3px;
 }
-.dropdownOptions2 li{
+
+.dropdownOptions2 li {
     font-family: "Montserrat";
-    padding: 5px;
+    /* padding: 5px; */
     border-bottom: 1px solid rgba(209, 209, 209, 1);
 }
+
 .filterTransaction2 {
     display: flex;
     border: 1px solid rgba(0, 0, 0, 1);
     border-style: dotted;
-    width: 27%;
+    /* width: 27%; */
     align-items: center;
     padding: 10px;
     cursor: pointer;
@@ -282,10 +296,15 @@
 
 }
 
-.dropdownOptions2 li:hover{
+.dropdownOptions2 li {
+    padding: 3px;
+}
+
+.dropdownOptions2 li:hover {
+
     background-color: #000000;
     color: white;
-   
+
 
 }
 
@@ -297,9 +316,11 @@
 /* .......Filter Drop Down Start.... */
 
 .filterDropDown {
+    height: 45px;
     position: relative;
     display: flex;
-padding: 5px;
+    padding: 5px;
+
     /* Ensures it behaves like a block-level element */
     &:hover {
         .dropdownOptions {
@@ -321,7 +342,7 @@ padding: 5px;
         background-color: #fff;
         min-width: 80px;
         border: 1px solid #ccc;
-      
+
         list-style-type: none;
         display: none;
         top: 100%;
@@ -349,18 +370,20 @@ padding: 5px;
 
 /* ...Filter Drop Down End */
 
-.bothFilter{
+.bothFilter {
     justify-content: space-between;
     display: flex;
+    margin-bottom: 1rem;
 }
 
 
 .productdata {
     border: 1px solid rgba(228, 228, 228, 1);
+    border-bottom: 0.3px solid rgba(228, 228, 228, 1);
     height: auto;
     width: 98%;
     margin: auto;
-    margin-top: 15px;
+    margin-top: -1px;
     display: flex;
 }
 
@@ -375,8 +398,7 @@ padding: 5px;
     align-items: center;
     padding: 10px;
     text-align: center;
-}
-
+} 
 
 .productDataDeatils {
     display: flex;
@@ -386,14 +408,14 @@ padding: 5px;
     /* background-color: red; */
 }
 
-.ProductImg {
+/* .ProductImg {
     border: 1px solid rgba(164, 164, 164, 1);
-    width : 20%;
-}
+    width: 20%;
+} */
 
 .DefaultProductImg {
     border: 1px solid rgba(164, 164, 164, 1);
-    width : 5%;
+    width: 5%;
 }
 
 .productTitle {
@@ -435,12 +457,13 @@ padding: 5px;
     line-height: 0.6;
 }
 
-.plusPrice{
+.plusPrice {
     color: rgba(112, 210, 65, 1);
     font-size: 18px;
     font-weight: 700;
 }
-.minusPrice{
+
+.minusPrice {
     font-size: 18px;
     font-weight: 700;
     color: rgb(7, 7, 7);
@@ -456,6 +479,7 @@ padding: 5px;
     padding: 4px;
     font-family: "Montserrat";
 }
+
 .viewBtn button {
     background-color: black;
     color: white;
@@ -584,7 +608,8 @@ padding: 5px;
     font-weight: 600;
 }
 
-.creditAmountDetail ,.creditAmountDetailDebit{
+.creditAmountDetail,
+.creditAmountDetailDebit {
     padding: 8px;
     text-align: end;
     width: 50%;
