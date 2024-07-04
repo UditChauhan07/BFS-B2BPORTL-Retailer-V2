@@ -352,28 +352,6 @@ export async function getRetailerBrands({ rawData }) {
   }
 }
 
-export async function getRetailerBrandsList(rawData) {
-  let headersList = {
-    Accept: "*/*",
-    "Content-Type": "application/json",
-    key : rawData.token
-  }
-  let response = await fetch(originAPi + "/retailer/v3/JbUxci", {
-    method: "POST",
-    body: JSON.stringify(rawData),
-    headers: headersList,
-  })
-  
-  let res = await response.text()
-  let data = JSON.parse(res)
-  
-  if (data.status == 300) {
-    DestoryAuth()
-  } else {
-    return data?.data?.records
-  }
-}
-
 export async function getOrderProduct({ rawData }) {
   let headersList = {
     Accept: "*/*",
@@ -744,7 +722,7 @@ export async function getSessionStatus({ key, retailerId }) {
     Accept: "*/*",
     "Content-Type": "application/json",
   };
-  console.log({ key, retailerId })
+  // console.log({ key, retailerId })
   let response = await fetch(url + "v3/VQzxx7VoZqQrVKe", {
     method: "POST",
     body: JSON.stringify({ key, retailerId }),
@@ -877,7 +855,7 @@ export async function getCreditNotes(key, retailer, manufacturer) {
 }
 
 export async function getCreditNotesList(key, retailer='', manufacturer='') {
-  console.log({key, retailer, manufacturer})
+  // console.log({key, retailer, manufacturer})
   const headersList = {
     Accept: "*/*",
     "Content-Type": "application/json",
@@ -895,8 +873,55 @@ export async function getCreditNotesList(key, retailer='', manufacturer='') {
   if (data.status == 300) {
     DestoryAuth()
   } else {
-    console.log({ dataResult : data?.data?.records })
+    // console.log({ dataResult : data?.data?.records })
     return data?.data?.records
+  }
+}
+
+
+
+export async function getRetailerBrandsList(rawData) {
+  let headersList = {
+    Accept: "*/*",
+    "Content-Type": "application/json",
+    key : rawData.token
+  }
+  let response = await fetch(originAPi + "/retailer/v3/JbUxciFst", {
+    method: "POST",
+    body: JSON.stringify({accountId: rawData.accountId}),
+    headers: headersList,
+  })
+  
+  let res = await response.text()
+  let data = JSON.parse(res)
+  
+  if (data.status == 300) {
+    DestoryAuth()
+  } else {
+    return data?.data
+  }
+}
+
+export async function getManufacturarAmount(key, retailer, saleRepId) {
+  const headersList = {
+    Accept: "*/*",
+    "Content-Type": "application/json",
+    key : key
+  }
+
+  let response = await fetch(originAPi + "/beauty/v3/xmJaWBmpNO", {
+    method: "POST",
+    body: JSON.stringify({ accountId: retailer, Sales_Rep__c: saleRepId }),
+    headers: headersList,
+  })
+
+  let data = JSON.parse(await response.text())
+
+  if (data.status == 300) {
+    DestoryAuth()
+  } else {
+    // console.log({ dataResult : data?.data?.records })
+    return data?.data
   }
 }
 

@@ -139,10 +139,27 @@ const handlePriceChange = (e) => {
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  let totalPrice = 0
   const handleSubmitModal = () => {
-    console.log({amount : selectedOption?.Amount, subTotal})
+    let fetchBag = fetchBeg()
+    if (fetchBag) {
+      let arr = [];
+      let productLists = Object.values(fetchBag.orderList)
+      if (productLists.length) {
+        productLists.map((product) => {
+          let temp = {
+            ProductCode: product.product.ProductCode,
+            qty: product.quantity,
+            price: product.product?.salesPrice,
+            discount: product.product?.discount,
+          }
+          arr.push(temp);
+          totalPrice += parseFloat(product.product?.salesPrice * product.quantity);
+        })
+      }
+    }
 
-    if (selectedOption?.Amount < subTotal) {
+    if (selectedOption?.Amount < totalPrice) {
       setCreditNoteFilter(selectedOption)
       localStorage.setItem('creditNoteFilterId', (selectedOption?.Id) ? selectedOption?.Id : '')
       localStorage.setItem('creditNoteFilterPoNumber', (selectedOption?.PO_Number) ? selectedOption?.PO_Number : '')
@@ -169,13 +186,13 @@ const handlePriceChange = (e) => {
     }
   }
 
-  console.log(
-    {
-      'creditNoteFilterId':localStorage.getItem('creditNoteFilterId'), 
-      'creditNoteFilterPoNumber':localStorage.getItem('creditNoteFilterPoNumber'),
-      'creditNoteFilterAmount' : localStorage.getItem('creditNoteFilterAmount')
-    }
-  )
+  // console.log(
+  //   {
+  //     'creditNoteFilterId':localStorage.getItem('creditNoteFilterId'), 
+  //     'creditNoteFilterPoNumber':localStorage.getItem('creditNoteFilterPoNumber'),
+  //     'creditNoteFilterAmount' : localStorage.getItem('creditNoteFilterAmount')
+  //   }
+  // )
 
   const handleNote = (selectedNote) => {
     setSelectedOption(selectedNote)
@@ -285,6 +302,7 @@ const handlePriceChange = (e) => {
         if (fetchBag) {
           // setButtonActive(true)
           let list = [];
+          let totalPrice = 0
           let orderType = "Wholesale Numbers";
           let productLists = Object.values(fetchBag.orderList);
           if (productLists.length) {
@@ -297,6 +315,7 @@ const handlePriceChange = (e) => {
                 discount: product.product?.discount,
               };
               list.push(temp);
+              totalPrice += parseFloat(product.product?.salesPrice * product.quantity);
             });
           }
 
@@ -304,15 +323,17 @@ const handlePriceChange = (e) => {
 
           if(localStorage.getItem('creditNoteFilterAmount') > 0)
           {
-            noteString = `\n \n--------------Credit Note--------------- \n $`+ localStorage.getItem('creditNoteFilterAmount') +` approved from PO Number `+ localStorage.getItem('creditNoteFilterPoNumber')+`\n \n Expected to pay  $ `+ (subTotal - localStorage.getItem('creditNoteFilterAmount')) +`\n \n--------------Credit Note---------------`
+            noteString = `\n \n--------------Credit Note--------------- \n $`+ localStorage.getItem('creditNoteFilterAmount') +` approved from PO Number `+ localStorage.getItem('creditNoteFilterPoNumber')+`\n \n Expected to pay  $ `+ (totalPrice - localStorage.getItem('creditNoteFilterAmount')) +`\n \n--------------Credit Note---------------`
           }
+
+          console.log({noteString})
 
           let begToOrder = {
             AccountId: fetchBag?.Account?.id,
             Name: fetchBag?.Account?.name,
             ManufacturerId__c: fetchBag?.Manufacturer?.id,
             PONumber: PONumber,
-            desc: (orderDesc) ? orderDesc : '' + noteString,
+            desc: (orderDesc) ? orderDesc + noteString : '' + noteString,
             SalesRepId: localStorage.getItem("Sales_Rep__c"),
             Type: orderType,
             ShippingCity:fetchBag?.Account?.address?.city,
@@ -390,7 +411,10 @@ const handlePriceChange = (e) => {
   const deleteBag= ()=>{
     localStorage.removeItem("orders")
     localStorage.removeItem("creditAmount")
-    window.location.reload();
+    localStorage.removeItem('creditNoteFilterId')
+    localStorage.removeItem('creditNoteFilterPoNumber')
+    localStorage.removeItem('creditNoteFilterAmount')
+    window.location.reload()
   }
   if (isOrderPlaced === 1) return <OrderLoader />;
   return (
@@ -542,19 +566,21 @@ const handlePriceChange = (e) => {
                           </>
                         )}
                       </div>
+                      
 
                       {/* New Total Start */}
+                      
+                      <div className={Styles.PreviousPricer}>
+                        <div>
+                          <h2>Total</h2>
+                        </div>
+                        <div>
+                          <h2>${Number(total).toFixed(2)}</h2>
+                        </div>
+                      </div>
                       {localStorage.getItem("orders") && Object.values(JSON.parse(localStorage.getItem("orders"))).length > 0 ? 
                       (
                         <>
-                          <div className={Styles.PreviousPricer}>
-                            <div>
-                            <h2>Total</h2>
-                            </div>
-                            <div>
-                              <h2>${Number(total).toFixed(2)}</h2>
-                            </div>
-                          </div>
                           <div className={Styles.DiscountPricer}>
                             <div>
                               
@@ -568,7 +594,7 @@ const handlePriceChange = (e) => {
                           {/* New Total End */}
                           <div className={Styles.TotalPricer}>
                             <div>
-                              <h2>Sub Total</h2>
+                              <h2>Expected To Pay</h2>
                             </div>
                             <div>
                               <h2>${(localStorage.getItem('creditAmount') > 0) ? Number(total - localStorage.getItem('creditAmount')).toFixed(2) : Number(total).toFixed(2)}</h2>
