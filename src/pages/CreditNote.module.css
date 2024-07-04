@@ -1,27 +1,214 @@
 .backTransaction {
     display: flex;
     align-items: center;
-    font-size: 29px;
-    font-weight: 700;
-    font-family: "Montserrat";
-    margin-top: 1rem;
+    margin-top: 3rem !important;
     margin-bottom: 1rem;
 }
 
+.backTransaction h1{
+    font-size: 29px;
+    font-weight: 700;
+    font-family: "Montserrat";
+    color: #000;
+}
+
+.seaportCSS{
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    border-left: 2px solid #000;
+    padding: 0 0 0 10px;
+
+}
+
+.BrandGroup h2{
+    /* font-family: "Montserrat"; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;   
+    margin: 0 0 2px 0px;
+    width: max-content;
+    text-transform: capitalize;
+
+}
+
+.BrandGroup{
+    display: flex;
+    gap: 12px;
+    margin:0 0 25px 0;
+    overflow: auto;
+    width: 1824px;
+    padding: 0 0 7px 0;
+
+
+}
+
+
+.BrandGroup::-webkit-scrollbar {
+    width: 0px;
+    height: 3px;
+    background-color: #f5f5f5;
+  }
+  .BrandGroup::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #434c4f;
+  }
+  .BrandGroup::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+
+
+
+.brandPrice h5{
+        font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #008000;
+    margin: 0 0 0 0;
+    width: max-content;
+
+  
+
+}
+
+.brandPrice h5 span{
+        font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+  
+
+}
+
+.brandColorCombi{
+    padding: 10px;
+    border-radius: 3px;
+    /* height: 50px; */
+}
+
+
+.brandLightBlue{
+    background-color: #ECFBFF;
+    
+}
+
+.brandLightBlue{
+    background-color: #ECFBFF;
+    
+}
+
+.brandLightGreen{
+    background-color: #EAFFEE;
+    
+}
+
+.brandLightPurple{
+    background-color: #FFDCDC;
+    
+}
+
+.brandLightBrown{
+    background-color: #FFEAD7;
+    
+}
+
+.brandLightSkyBlue{
+    background-color: #F0F6FF;
+    
+}
+
+.CircleDotGreenMain{
+    border-left: 1px solid #E9E9E9;
+    display: grid;
+    align-items: center;
+    padding: 0 0 0 12px;
+    width: 82px;
+    margin: 0  12px;
+}
+
+.CircleDotGreen{
+    /* margin: auto; */
+display: flex;
+align-items: center;
+justify-content: center;
+ 
+
+
+
+}
+
+.CircleDotGreen .DotGreen{
+   margin: 0 auto 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    background-color: #20C820;
+    border: 5px solid #C9FFC9;
+}
+
+.CircleDotGreen .DotOrange{
+    margin: 0 auto 4px;
+     width: 18px;
+     height: 18px;
+     border-radius: 20px;
+     background-color: #DD8500;
+     border: 5px solid #FFD79B ;
+ }
+
+/* .CircleDotGreen h5{
+    font-size: 12px;
+    font-weight: 500;
+    color: #20C820;
+    font-family: "Montserrat";
+} */
+
+.FontColorGreen {
+    font-size: 12px;
+    font-weight: 500;
+    color: #20C820;
+    font-family: "Montserrat";
+}
+
+.FontColorOrange {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+    color: #DD8500;
+    font-family: "Montserrat";
+    margin: 0;
+}
+
+
+.filterDotedDiv{
+    margin-bottom: 1rem;
+    
+}
+
+.bothFilter{
+    display: flex;
+    justify-content: space-between;
+}
 .filterTransaction {
     display: flex;
     border: 1px solid rgba(0, 0, 0, 1);
     border-style: dotted;
-    width: 30%;
+    width: 40%;
     align-items: center;
     padding: 10px;
+    cursor: pointer;
 
 }
 
 .inputMain {
     font-family: "Montserrat";
     width: 100%;
-    margin-left: 5px;
+    margin-left: 10px;
     color: rgba(100, 100, 100, 1);
 }
 
@@ -29,8 +216,9 @@
     width: 100%;
     outline: none;
     font-size: 14px;
-    margin-left: 5px;
 }
+
+
 
 .productDeatils {
     border: 1px solid rgba(0, 0, 0, 1);
@@ -44,8 +232,8 @@
 }
 
 .titleAndFilter {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+margin-top: 1rem;
+margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     height: auto;
@@ -67,7 +255,8 @@
     padding: 10px;
     margin-right: 15px;
     display: flex;
-    width: 110px;
+    width: 120px;
+    height: 45px;
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
@@ -90,10 +279,10 @@
 
 .dropdownOptions {
     position: absolute;
-    top: -500%;
-    left: 25%;
+    /* top: -500%;
+    left: 25%; */
     text-align: end;
-    transform: translateX(-50%);
+    transform: translateX(-40%);
     background-color: #f9f9f9;
     min-width: 80px;
     border: 1px solid #ddd;
@@ -120,151 +309,55 @@
 .FilterHead {
     font-weight: 600;
     color: rgba(56, 56, 56, 1);
-}
-
-.productdata {
-    border: 1px solid rgba(228, 228, 228, 1);
-    height: auto;
-    width: 98%;
-    margin: auto;
-    margin-top: 15px;
-    display: flex;
-}
-
-.noDataFound {
-    border: 1px solid rgba(228, 228, 228, 1);
-    height: auto;
-    width: 98%;
-    margin: auto;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-}
-
-
-.productDataDeatils {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    width: 70%;
-    /* background-color: red; */
-}
-
-/* .ProductImg {
-    border: 1px solid rgba(164, 164, 164, 1);
-    width: 20%;
-} */
-
-.DefaultProductImg {
-    border: 1px solid rgba(164, 164, 164, 1);
-    width: 5%;
-}
-
-.productTitle {
-    font-family: "Montserrat";
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 1) !important;
-    letter-spacing: 1.5px;
-    margin-left: 10px;
-    padding: 10px 0px 0px 0px;
-}
-
-.productTitle h3 {
-    font-size: 22px;
-
-
-}
-
-.productTitle span {
+    font-family: 'Montserrat';
     font-size: 16px;
 }
 
-.pricDeatils {
-    /* background-color: rgb(0, 255, 149); */
-    width: 30%;
-    height: 75px;
-    justify-content: end;
-}
-
-.pricDeatils {
-    display: flex;
-    text-align: right;
-    text-transform: uppercase;
-
-}
-
-.priceAndDate {
-    margin: auto 0;
-    font-family: "Montserrat";
-    line-height: 0.6;
-}
-
-.plusPrice {
-    color: rgba(112, 210, 65, 1);
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.minusPrice {
-    font-size: 18px;
-    font-weight: 700;
-    color: rgb(7, 7, 7);
-}
-
-.priceAndDate small {
-    color: rgba(131, 137, 160, 1);
-    font-size: 14px;
-}
-
-.viewBtn {
-    margin: 10px 15px;
-    padding: 4px;
-    font-family: "Montserrat";
-}
-
-.viewBtn button {
-    background-color: black;
-    color: white;
-    padding: 6px 10px;
-    font-size: 14px;
-}
-
-
 /* //......Transaction Drop Down Start.. */
-.Calendardate {
+.Calendardate{
     /* width: 50%; */
 }
-
-.Calendardate input {
-    width: 80%;
+.Calendardate input{
+    width: 122px;
     font-weight: 500;
     color: rgba(0, 0, 0, 1);
     margin-left: 3px;
     outline: none;
 }
 
-.TransactionDiv {
+.Calendardate form{
+    display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 111;
+    }
+
+    .Calendardate form svg path{
+        fill: #000;
+    }
+
+    .Calendardate form svg{
+        width: 20px;
+        height: 20px;
+        margin: 5px 0px 0px 8px;
+    }
+
+.TransactionDiv{
     /* width: 50%; */
     display: flex;
     align-items: center;
     gap: 5px;
 
 }
-
-.TransactionDropDown {
+.TransactionDropDown{
     font-family: 'Montserrat';
 }
-
-.TransactionDropDown p {
+.TransactionDropDown p{
     color: rgba(0, 0, 0, 1);
     font-weight: 600;
-    margin-bottom: 0px;
+    margin-bottom:0px;
 }
-
-.dropdownOptions2 {
+.dropdownOptions2{
     position: absolute;
     right: 0%;
     /* top: 0%; */
@@ -279,15 +372,14 @@
     z-index: 1;
     letter-spacing: 1.3px;
 }
-
-.dropdownOptions2 li {
+.dropdownOptions2 li{
     font-family: "Montserrat";
-    /* padding: 5px; */
+    padding: 0px 5px;
     border-bottom: 1px solid rgba(209, 209, 209, 1);
 }
-
 .filterTransaction2 {
     display: flex;
+    gap: 17px;
     border: 1px solid rgba(0, 0, 0, 1);
     border-style: dotted;
     /* width: 27%; */
@@ -297,16 +389,13 @@
     position: relative;
 
 }
-
-.dropdownOptions2 li {
+.dropdownOptions2 li{
     padding: 3px;
 }
-
-.dropdownOptions2 li:hover {
-
+.dropdownOptions2 li:hover{
     background-color: #000000;
     color: white;
-
+   
 
 }
 
@@ -318,11 +407,9 @@
 /* .......Filter Drop Down Start.... */
 
 .filterDropDown {
-    height: 45px;
     position: relative;
     display: flex;
-    padding: 5px;
-
+padding: 5px;
     /* Ensures it behaves like a block-level element */
     &:hover {
         .dropdownOptions {
@@ -344,7 +431,7 @@
         background-color: #fff;
         min-width: 80px;
         border: 1px solid #ccc;
-
+      
         list-style-type: none;
         display: none;
         top: 100%;
@@ -372,16 +459,11 @@
 
 /* ...Filter Drop Down End */
 
-.bothFilter {
-    justify-content: space-between;
-    display: flex;
-    margin-bottom: 1rem;
-}
-
 
 .productdata {
     border: 1px solid rgba(228, 228, 228, 1);
     border-bottom: 0.3px solid rgba(228, 228, 228, 1);
+
     height: auto;
     width: 98%;
     margin: auto;
@@ -400,7 +482,8 @@
     align-items: center;
     padding: 10px;
     text-align: center;
-} 
+}
+
 
 .productDataDeatils {
     display: flex;
@@ -410,28 +493,29 @@
     /* background-color: red; */
 }
 
-/* .ProductImg {
-    border: 1px solid rgba(164, 164, 164, 1);
-    width: 20%;
-} */
+.ProductImg {
+    /* border: 1px solid rgba(164, 164, 164, 1);
+    width : 20%; */
+}
 
 .DefaultProductImg {
-    border: 1px solid rgba(164, 164, 164, 1);
-    width: 5%;
+    /* border: 1px solid rgba(164, 164, 164, 1);
+    width : 5%; */
 }
 
 .productTitle {
     font-family: "Montserrat";
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 1) !important;
-    letter-spacing: 1.5px;
+
     margin-left: 10px;
     padding: 10px 0px 0px 0px;
 }
 
 .productTitle h3 {
     font-size: 22px;
-
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 600;
 
 }
 
@@ -457,12 +541,14 @@
     margin: auto 0;
     font-family: "Montserrat";
     line-height: 0.6;
+    
 }
 
 .plusPrice {
-    color: rgba(112, 210, 65, 1);
+    color:#000;
     font-size: 18px;
     font-weight: 700;
+    width: 170px;
 }
 
 .minusPrice {
@@ -485,7 +571,7 @@
 .viewBtn button {
     background-color: black;
     color: white;
-    padding: 6px 10px;
+    padding: 4px 13px;
     font-size: 14px;
 }
 
@@ -610,8 +696,7 @@
     font-weight: 600;
 }
 
-.creditAmountDetail,
-.creditAmountDetailDebit {
+.creditAmountDetail ,.creditAmountDetailDebit{
     padding: 8px;
     text-align: end;
     width: 50%;
@@ -675,18 +760,159 @@
 .mainbutton {
     display: flex;
     justify-content: flex-end;
-    margin-right: 4.5rem;
-    margin-top: 15px;
-    margin-bottom: 2.5rem;
+    /* margin-right: 4.5rem; */
+    /* margin-top: 15px;
+    margin-bottom: 2.5rem; */
+    width: 80%;
+    margin: 15px auto 2.5rem auto;
 }
 
 .CancleBtn {
     padding: 5px 30px !important;
     border: 1px solid rgba(0, 0, 0, 1);
     font-weight: 600;
-    margin-right: 20px;
+    margin-right: 0px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+
+
+.AmountRed{
+    color:#B82F04 !important ;
+}
+
 /* .....my new modal css End.. */
+
+/* modal frist one start */
+
+
+.ModalPart{
+    width: 1000px;
+    padding: 30px;
+    
+}
+
+.ModalPart h4{
+    font-size: 22px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
+.RetailerMainName{
+    padding: 25px;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    background-color: #F8FAFB;
+    
+}
+
+.RetailerAllName{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+margin: 0 0 30px 0;
+}
+
+.Retailers{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #D5D9D9;
+    background-color: #fff;
+}
+
+
+.Retailers label{
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.Retailers label input[type="radio"] {
+    width: 25px;
+    height: 25px;
+    accent-color:#fff;
+}
+
+.Retailers label input[type=radio]:checked:after {
+    width: 25px;
+    height: 25px;
+    border: 8px solid #000;
+    transition: .5s;
+    border-radius: 15px;
+    background-color: #f3f4f4;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+}
+
+.RetailerRate h4{
+    font-size: 16px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: #008000;
+    padding: 0 0 5px 0;
+    margin: 0;
+    text-align: end;
+}
+
+.RetailerRate p{
+    padding: 0 0 0 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-weight: 400;
+    color: #000;
+}
+.ButtonSubmit{
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+}
+
+.ButtonSubmit button{
+    border: 1px solid #000;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: #000;
+    height: 42px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.SubmitButton{
+    background-color: #000;
+    color: #fff !important;
+}
+/* modal frist one start */
+
+.ValidationMessage {
+    color: red !important;
+    font-size: 14px !important;
+    margin-top: 10px;
+}
+
+  
+.loaderSmall{
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.componentDatePicker {
+    cursor: pointer;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+}
