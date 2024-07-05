@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, forwardRef } from 'react';
+import React, { useState, useEffect, useMemo, forwardRef,useRef } from 'react';
 import Style from "../pages/CreditNote.module.css";
 import Loading from "../components/Loading";
 import LoadingSmall from "../components/LoadingSmall";
@@ -12,8 +12,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { CalenderIcon } from "../lib/svg";
 let PageSize = 10
 const CreditNote = () => {
-    const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-        <div className={Style.componentDatePicker} onClick={onClick} ref={ref} >
+    const ExampleCustomInput = forwardRef(({ value, onClick, onMouseEnter}, ref) => (
+        <div className={Style.componentDatePicker} onMouseEnter={onMouseEnter} onClick={onClick} ref={ref} >
             {value || 'Select Date'}
             <CalenderIcon />
         </div>
@@ -44,7 +44,8 @@ const CreditNote = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [manufacturarAmount, setManufacturarAmount] = useState([])
     const [manufacturers, setManufacturers] = useState([])
-
+    const [calendarOpen, setCalendarOpen] = useState(false);
+   
     // Component Modal Function start......//
     const openModal = (item) => {
         setSelectedItem(item);
@@ -187,7 +188,15 @@ const CreditNote = () => {
         setCurrentDate(value)
         setCreatedDateFilter(value)
     }
-
+    const handleMouseEnter = () => {
+        setCalendarOpen(true);
+      };
+    
+      const handleMouseLeave = () => {
+        // Close calendar if no date is selected and mouse leaves the calendar area
+          setCalendarOpen(false);
+        
+      };
     //............Calender Function End...........//
 
     ///...........Function for Filter start.....//
@@ -342,9 +351,13 @@ const CreditNote = () => {
                             </div>
                             <div className={Style.filterTransaction2}>
 
-                                <div className={Style.Calendardate}>
+                                <div className={Style.Calendardate} onMouseLeave={handleMouseLeave}>
                                     <form action="/action_page.php">
-                                        <DatePicker selected={currentDate} dateFormat="MMM/dd/yyyy" onChange={handleDateChange} customInput={<ExampleCustomInput />} />
+                                        <DatePicker selected={currentDate} dateFormat="MMM/dd/yyyy" onChange={handleDateChange}
+                                         customInput={<ExampleCustomInput onMouseEnter={handleMouseEnter} />} 
+                                         open={calendarOpen}
+                                        
+                                         />
                                     </form>
                                 </div>
                                 <div className={Style.TransactionDiv} onMouseEnter={() => setShowDropmenu(true)} onMouseLeave={() => setShowDropmenu(false)}>
