@@ -398,9 +398,9 @@ const CreditNote = () => {
                                             {currentTableData?.map((item, index) => (
                                                 <div className={Style.productdata} key={index}>
                                                     <div className={Style.productDataDeatils}>
-                                                        <div className={item?.ManufacturerLogo ? Style.ProductImg : Style.DefaultProductImg}>
-                                                            {/* <img src={item?.ManufacturerLogo ?? img} alt='img' /> */}
-                                                        </div>
+                                                        {/* <div className={item?.ManufacturerLogo ? Style.ProductImg : Style.DefaultProductImg}>
+                                                            <img src={item?.ManufacturerLogo ?? img} alt='img' />
+                                                        </div> */}
                                                         <div className={Style.productTitle}>
                                                             <h3>
                                                                 {item.Manufacturer} 
